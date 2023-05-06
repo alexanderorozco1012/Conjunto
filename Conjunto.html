@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LogicApp</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/conjunto-style.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-info">
+    <div class="container">
+      <a class="navbar-brand" href="Menu.html">
+        <img src="img/Logo.png" alt="" width="240" height="80" />
+      </a>
+      <h1 class="text-white">LogicApp</h1>
+    </div>
+  </nav>
+  <div class="" tabindex="-1">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header input-group" id="content">
+          <h6 class="modal-title">CANT. DE CONJUNTO:</h6>
+          <div class="col-sm-10 ">
+            <input class="form-control m-1" type="number" placeholder="" id="cantidad_conjunto" autocomplete="off">
+          </div>
+        </div>
+      
+        <div class="modal-body shadow-lg bg-body rounded" align="center">
+          <h4>Operaciones entre conjuntos</h4>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <button type="button" class="form-control btn btn-info m-1" id="union" style="z-index: 1;" disabled><img style="width:30px; margin: 0 7px 0px 0;"  src="img/Union.png" alt="">UNION</button>
+              </div>
+              <div class="col">
+                <button type="button" class="form-control btn btn-info m-1" id="interseccion" disabled><img style="width:30px; margin: 0 7px 0px 0;"  src="img/Interseccion.png" alt="">INTERSECCION</button>
+              </div>
+              <div class="col">
+                <button type="button" class="form-control btn btn-info m-1" id="diferencia" disabled><img style="width:30px; margin: 0 7px 0px 0;"  src="img/Diferencia.png" alt="">DIFERENCIA</button>
+              </div>
+              <div class="col">
+                <button type="button" class="form-control btn btn-info m-1" id="simetrica" disabled><img style="width:26px; margin: 0 7px 0px 0;"  src="img/Simetrica.png" alt="">DIF. SIMETRICA</button>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="modal-footer input-group">
+          <h5 class="modal-title m-1">Resultado:</h5>
+          <input type="text" class="form-control m-1" aria-label="example" name="resultado" id="resultado" />
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+</body>
+
+</html>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/controles.js"></script>
+<script src="js/appConjunto.js"></script>

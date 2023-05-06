@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LogicApp</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-info">
+      <div class="container">
+        <a class="navbar-brand" href="Menu.html">
+          <img
+            src="img/Logo.png"
+            alt=""
+            width="240"
+            height="80"
+          />
+        </a>
+        <h1 class="text-white">LogicApp</h1>
+      </div>
+    </nav>
+
+    <!-- Modal tabla-->
+    <div
+      class="modal fade"
+      id="modalTabla"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">RESULTADOS GENERADOS</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div id="tabla"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header input-group">
+            <h5 class="modal-title m-1">Expresion a calcular:</h5>
+            <input
+              type="text"
+              class="form-control m-1"
+              placeholder="Ejemplo:(p→q)↔r"
+              aria-label="(p→q)↔r"
+              name="valores"
+              id="valores"
+              readonly="readonly"
+            />
+           <button  class="btn btn-warning" value="BORRAR" onclick="eliminar()"><img style="width: 20px;margin: 0 7px 0px 0;" src="img/Delete.png" alt="">BORRAR</button></button>
+          </div>
+          <div class="modal-body shadow-lg bg-body rounded" align="center">
+            <h4>Proposiciones</h4>
+
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <strong>P</strong>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    name="value"
+                    id="valueOfP"
+                    onChange="switchValue(this.value)"
+                  >
+                    <option value="verdadero">Verdadero</option>
+                    <option value="falso">Falso</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <strong>Q</strong>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    name="value"
+                    id="valueOfQ"
+                    onChange="switchValue(this.value)"
+                  >
+                    <option value="verdadero">Verdadero</option>
+                    <option value="falso">Falso</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <strong>R</strong>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    name="value"
+                    id="valueOfR"
+                    onChange="switchValue(this.value)"
+                  >
+                    <option value="verdadero">Verdadero</option>
+                    <option value="falso">Falso</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <strong>S</strong>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    name="value"
+                    id="valueOfS"
+                    onChange="switchValue(this.value)"
+                  >
+                    <option value="verdadero">Verdadero</option>
+                    <option value="falso">Falso</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <strong>T</strong>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    name="value"
+                    id="valueOfT"
+                    onChange="switchValue(this.value)"
+                  >
+                    <option value="verdadero">Verdadero</option>
+                    <option value="falso">Falso</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <strong>X</strong>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    name="value"
+                    id="valueOfX"
+                    onChange="switchValue(this.value)"
+                  >
+                    <option value="verdadero">Verdadero</option>
+                    <option value="falso">Falso</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <input
+                    type="button"
+                    class="form-control btn btn-info m-1"
+                    value="p"
+                    onclick="retornar(value,'p')"
+                  />
+                </div>
+                <div class="col">
+                  <input
+                    type="button"
+                    class="form-control btn btn-info m-1"
+                    value="q"
+                    onclick="retornar(value,'q')"
+                  />
+                </div>
+                <div class="col">
+                  <input
+                    type="button"
+                    class="form-control btn btn-info m-1"
+                    value="r"
+                    onclick="retornar(value,'r')"
+                  />
+                </div>
+                <div class="col">
+                  <input
+                    type="button"
+                    class="form-control btn btn-info m-1"
+                    value="s"
+                    onclick="retornar(value,'s')"
+                  />
+                </div>
+                <div class="col">
+                  <input
+                    type="button"
+                    class="form-control btn btn-info m-1"
+                    value="t"
+                    onclick="retornar(value,'t')"
+                  />
+                </div>
+                <div class="col">
+                  <input
+                    type="button"
+                    class="form-control btn btn-info m-1"
+                    value="x"
+                    onclick="retornar(value,'x')"
+                  />
+                </div>
+                <div class="col">
+                  <input
+                    type="button"
+                    class="form-control btn btn-info m-1"
+                    value="("
+                    onclick="retornar(value,'(')"
+                  />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <input
+                    type="button"
+                    class="form-control btn btn-info m-1"
+                    value="ʌ"
+                    onclick="retornar(value,'&amp;')"
+                  />
+                </div>
+                <div class="col">
+                  <input
+                    type="button"
+                    class="form-control btn btn-info m-1"
+                    value="∨"
+                    onclick="retornar(value,'|')"
+                  />
+                </div>
+                <div class="col">
+                  <input
+                    type="button"
+                    class="form-control btn btn-info m-1"
+                    value="→"
+                    onclick="retornar(value,'>')"
+                  />
+                </div>
+                <div class="col">
+                  <input
+                    type="button"
+                    class="form-control btn btn-info m-1"
+                    value="¬"
+                    onclick="retornar(value,'!')"
+                  />
+                </div>
+                <div class="col">
+                  <input
+                    type="button"
+                    class="form-control btn btn-info m-1"
+                    value=")"
+                    onclick="retornar(value,')')"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <input
+                    type="button"
+                    class="form-control btn btn-info m-1"
+                    value="↔"
+                    onclick="retornar(value,'<')"
+                  />
+                </div>
+                <div class="col">
+                  <button class="form-control btn btn-danger m-1" value="BORRAR TODO" id="calcular" onclick="limpiarTextField()">
+                    <img style="width: 20px;margin: 0 7px 0px 0;" src="img/DeleteAll.png" alt="">BORRAR TODO</button>
+                </div>
+                <div class="col">
+                  <button class="form-control btn btn-success m-1" value="CALCULAR" id="calcular" onclick="(new Calcular()).calcular()">
+                  <img style="width: 20px;margin: 0 7px 0px 0;" src="img/Calculate.png" alt="">CALCULAR</button>
+                </div>
+              </div>
+            </div>
+            <hr />
+          </div>
+          <div class="modal-footer input-group">
+            <h5 class="modal-title m-1">Resultado:</h5>
+            <input
+              type="text"
+              class="form-control m-1"
+              aria-label="example"
+              name="resultado"
+              id="resultado"
+            />
+            <button
+              type="button"
+              class="btn btn-outline-info"
+              id="tabla"
+              onclick="crearTabla()"
+            ><img style="width:20px; margin: 0 7px 0px 0;"  src="img/Table.png" alt="">
+             VISUALIZAR TABLA
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="contenedorTabla" class="container">
+
+      </div>
+    </div>
+  </body>
+</html>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/controles.js"></script>

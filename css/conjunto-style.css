@@ -1,0 +1,39 @@
+/*Utilidades*/
+.p-5 {
+  padding: 5px;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+/*Estilos para control*/
+
+.c-in {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 4px;
+}
+
+.CustomModal {
+  margin: auto;
+}
+
+.contenedor{
+
+  display: flex;
+  justify-content: center center;
+  flex-direction: column;
+
+}
+
+.div-parent {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 4px;
+  margin-bottom: 10px;
+}
