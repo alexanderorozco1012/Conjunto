@@ -56,11 +56,12 @@ document.addEventListener("DOMContentLoaded", () => {
 function saveValue(e) {
   let input;
   let btn;
+  let newArray;
   switch (e.target.value.split(" ")[1].trim()) {
     case "A":
       input = e.target.previousSibling.previousSibling;
       btn = e.target.nextSibling.nextSibling;
-
+      
       if (cantA != 0) {
         flag = false;
         if (arrayA.length >= cantA) {
@@ -69,8 +70,14 @@ function saveValue(e) {
           input.value = `{${arrayA}}`;
           return;
         }
-
-        arrayA.push(input.value);
+        const expResion = new RegExp(`^[a-zA-Z0-9]+(?:,[a-zA-Z0-9]+)*$`);
+        if (!expResion.test(input.value)){
+          alert('expresión invalida verifique que la cadena no empiece o termine con " , " o tenga dos comas consecutivas');
+          return;
+        };
+        newArray = input.value.split(',')
+        arrayA = newArray;
+        //arrayA.push(input.value);
         input.value = "";
         btn.value = `Dato: ${arrayA.length}/${cantA}`;
         
@@ -105,8 +112,14 @@ function saveValue(e) {
           input.value = `{${arrayB}}`;
           return;
         }
-  
-        arrayB.push(input.value);
+        const expResion = new RegExp(`^[a-zA-Z0-9]+(?:,[a-zA-Z0-9]+)*$`);
+        if (!expResion.test(input.value)){
+          alert('expresión invalida verifique que la cadena no empiece o termine con " , " o tenga dos comas consecutivas');
+          return;
+        };
+        newArray = input.value.split(',')
+        arrayB = newArray;  
+        //arrayB.push(input.value);
         input.value = "";
         btn.value = `Dato: ${arrayB.length}/${cantB}`;
         
@@ -142,8 +155,14 @@ function saveValue(e) {
           input.value = `{${arrayC}}`;
           return;
         }
-  
-        arrayC.push(input.value);
+        const expResion = new RegExp(`^[a-zA-Z0-9]+(?:,[a-zA-Z0-9]+)*$`);
+        if (!expResion.test(input.value)){
+          alert('expresión invalida verifique que la cadena no empiece o termine con " , " o tenga dos comas consecutivas');
+          return;
+        };
+        newArray = input.value.split(',')
+        arrayC = newArray;
+        //arrayC.push(input.value);
         input.value = "";
         btn.value = `Dato: ${arrayC.length}/${cantC}`;
         
@@ -178,8 +197,14 @@ function saveValue(e) {
           input.value = `{${arrayD}}`;
           return;
         }
-  
-        arrayD.push(input.value);
+        const expResion = new RegExp(`^[a-zA-Z0-9]+(?:,[a-zA-Z0-9]+)*$`);
+        if (!expResion.test(input.value)){
+          alert('expresión invalida verifique que la cadena no empiece o termine con " , " o tenga dos comas consecutivas');
+          return;
+        };
+        newArray = input.value.split(',')
+        arrayD = newArray;
+        //arrayD.push(input.value);
         input.value = "";
         btn.value = `Dato: ${arrayD.length}/${cantD}`;
         
@@ -214,8 +239,14 @@ function saveValue(e) {
           input.value = `{${arrayE}}`;
           return;
         }
-  
-        arrayE.push(input.value);
+        const expResion = new RegExp(`^[a-zA-Z0-9]+(?:,[a-zA-Z0-9]+)*$`);
+        if (!expResion.test(input.value)){
+          alert('expresión invalida verifique que la cadena no empiece o termine con " , " o tenga dos comas consecutivas');
+          return;
+        };
+        newArray = input.value.split(',')
+        arrayE = newArray;
+        //arrayE.push(input.value);
         input.value = "";
         btn.value = `Dato: ${arrayE.length}/${cantE}`;
         
